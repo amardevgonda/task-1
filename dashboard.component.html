@@ -1,0 +1,98 @@
+<!-- <div class="div">
+ 
+    <div class="container box" style="background-color: rgb(11, 14, 238)">
+      <p class="reg">My angular app</p> -->
+      <!-- <div class="container"> -->
+
+        <!-- <hr> -->
+     <!-- <div>already have an account?<a href="../login">login...</a></div> -->
+    <!-- </div> -->
+      
+    <!-- </div>
+    <div class="heading">
+    </div>
+  </div> -->
+
+  <nav class="navbar" style="background-color:rgb(135, 135, 235) ;">
+    <div class="container-fluid">
+    my angular app
+      <a class="navbar-brand"></a>
+      <form class="d-flex" role="search">
+        <button class="btn btn-outline-success" type="submit">logout</button>
+      </form>
+    </div>
+  </nav>
+  <h2 style="text-align:center ;">Product Inventory</h2>
+  <hr>
+
+  <div style="display:flex ;column-gap: 40px;">
+<div  style="width:900px ;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">sku</th>
+        <th scope="col">description</th>
+        <th scope="col">price</th>
+        <th scope="col">stock</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of collection">
+        <th scope="row">{{item.name}}</th>
+        <td>{{item.sku}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.stock}}</td>
+        <td><i (click)="deleteList(item.name)" class="fa fa-trash" style="font-size:25px;color:red;"></i></td>
+
+      </tr>
+      <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
+
+  <div>
+
+  <form [formGroup]="addList" (ngSubmit)="collectList()">
+    <div class="form-group">
+      <label for="exampleInputEmail">Name</label>
+      <input type="text" class="form-control" formControlName="name"  placeholder="Enter name">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail">Sku</label>
+        <input type="text" class="form-control" formControlName="sku" placeholder="Enter sku">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail">Description</label>
+        <input type="text" class="form-control" formControlName="description" placeholder="Enter description">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail">Price</label>
+        <input type="number" class="form-control" formControlName="price" placeholder="Enter price">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail">Stock</label>
+        <input type="number" class="form-control" formControlName="stock" placeholder="Enter Stock">
+      </div>
+  <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
